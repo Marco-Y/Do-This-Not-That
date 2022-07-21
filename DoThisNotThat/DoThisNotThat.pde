@@ -1,10 +1,14 @@
 //Global Variables
-color defaultWhite=#FFFFFF, red=#FF0000, yellow=#CDF011, green=#00FF00;
-float xClickThis, yClickThis, clickThisWidth, clickThisHeight;
+color defaultWhite=#FFFFFF, red=#FF0000, yellow=#FFFF00, green=#00FF00, black=#000000;
+float buttonX1, buttonY1, buttonWidth1, buttonHeight1;
+float buttonX2, buttonY2, buttonWidth2, buttonHeight2;
+float rectDisplayX, rectDisplayY, rectDisplayWidth, rectDisplayHeight;
+float ellipseDisplayX, ellipseDisplayY, ellipseDisplayXdiameter, ellipseDisplayYdiameter;
+Boolean rectON = false, ellipseON = false;
 //
 void setup() {
   //Display Geometry
-  size(600, 900); //Landscape
+  size(900, 600); //Landscape
   println (width, height, displayWidth, displayHeight);
   int appWidth = width;
   int appHeight = height;
@@ -28,9 +32,34 @@ void setup() {
     println(instruct);
   }
   //Population
+  int xCenter = appWidth/2;
+  int yCenter = appHeight/2;
+  buttonX1 = xCenter - appWidth*1/4;
+  buttonY1 = yCenter + appHeight*1/4;
+  buttonWidth1 = appWidth*1/4;
+  buttonHeight1 = appHeight*1/4;
+  buttonX2 = xCenter + appWidth*1/4;
+  buttonY2 = buttonY1;
+  buttonWidth2 = buttonWidth1;
+  buttonHeight2 = buttonHeight1;
+  rectDisplayX = buttonX1;
+  rectDisplayY = yCenter - appHeight*1/4;
+  rectDisplayWidth = buttonWidth1;
+  rectDisplayHeight = buttonHeight1;
+  ellipseDisplayX = buttonX2;
+  ellipseDisplayY = rectDisplayY;
+  ellipseDisplayXdiameter = appWidth*1/5;
+  ellipseDisplayYdiameter = appHeight*1/10;
   //
 }//End setup
 void draw() {
+  background(black);
+  rect(buttonX1, buttonY1, buttonWidth1, buttonHeight1);
+  rect(buttonX2, buttonY2, buttonWidth2, buttonHeight2);
+  if ( rectON==true ) rect(rectDisplayX, rectDisplayY, rectDisplayWidth, rectDisplayHeight); //Button 1
+  if ( ellipseON==true ) ellipse(ellipseDisplayX, ellipseDisplayY, ellipseDisplayXdiameter, ellipseDisplayYdiameter); //Button 2
+  //
+  //Text for Buttons
 }
 //End draw
 void keyPressed() {
