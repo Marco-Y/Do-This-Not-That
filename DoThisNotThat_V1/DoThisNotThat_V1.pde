@@ -75,8 +75,9 @@ void draw() {
   fill(purple);
   textAlign(CENTER, CENTER); //Align X&Y
   //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
-  textFont(buttonFont, 25);
+  textFont(buttonFont, 40);
   text(buttonText1, buttonX1, buttonY1, buttonWidth1, buttonHeight1);
+  text(buttonText2, buttonX2, buttonY2, buttonWidth2, buttonHeight2);
   fill(defaultColor);
 }
 //End draw
